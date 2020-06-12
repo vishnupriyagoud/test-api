@@ -3,9 +3,9 @@ import pymysql
 from decimal import Decimal
 
 def query(querystr , return_json=True):
-    connection=pymysql.connect(host="localhost",
-                                user="root",
-                                password="Priya1116",
+    connection=pymysql.connect(host='cosc-skillup.cxgok3weok8n.ap-south-1.rds.amazonaws.com',
+                                user="admin",
+                                password="coscskillup",
                                 db="testapi",
                                 cursorclass=pymysql.cursors.DictCursor )
     connection.begin()
@@ -26,4 +26,5 @@ def encode(data):
         for key,value in row.items():
             if isinstance(value, Decimal):
                 row[key]=str(value)
+    #print(query("""SELECT * FROM EMP;"""))
     return data
