@@ -8,4 +8,4 @@ api= Api(app)
 api.add_resource(Emp,'/emp')
 
 
-app.run( port="8055", debug=True)
+app.run()
